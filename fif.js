@@ -251,25 +251,15 @@ class Handlers
 
 			// 解析 resultJson 字符串为 JSON 对象
 			var resultJson = Fiddler.WebFormats.JSON.JsonDecode(resultJsonString);
+		
 			
-			// FiddlerApplication.Log.LogString("resultJsonString=========" + resultJsonString);
-			
-			for (var item in resultJson.JSONObject) {
-				resultJson.JSONObject[item]["score"] = 100;
-				resultJson.JSONObject[item]["semantic"] = 100;
-				resultJson.JSONObject[item]["accuracy"] = 100;
-				resultJson.JSONObject[item]["fluency"] = 100;
-				resultJson.JSONObject[item]["complete"] = 100;
-				resultJson.JSONObject[item]["learn_time"] = 120;
-			}
-
-			//resultJson.JSONObject[0]["score"] = 100;
-			//resultJson.JSONObject[0]["semantic"] = 100;
-			//resultJson.JSONObject[0]["accuracy"] = 100;
-			//resultJson.JSONObject[0]["fluency"] = 100;
-			//resultJson.JSONObject[0]["complete"] = 100;
-			//resultJson.JSONObject[0]["learn_time"] = 120;
-			//FiddlerApplication.Log.LogString("=========" + resultJson.JSONObject[0]["score"]);
+			resultJson.JSONObject[0]["score"] = Math.floor(Math.random()*(100-98+1))+98;
+			resultJson.JSONObject[0]["semantic"] = Math.floor(Math.random()*(100-98+1))+98;
+			resultJson.JSONObject[0]["accuracy"] = Math.floor(Math.random()*(100-98+1))+98;
+			resultJson.JSONObject[0]["fluency"] = Math.floor(Math.random()*(100-98+1))+98;
+			resultJson.JSONObject[0]["complete"] = 100;
+			resultJson.JSONObject[0]["learn_time"] = Math.floor(Math.random()*(150-85+1))+85;
+			FiddlerApplication.Log.LogString("=========" + resultJson.JSONObject[0]["score"]);
 
 			
 			// 将JSON对象转换为字符串
@@ -544,6 +534,7 @@ class Handlers
 		}
 	}
 }
+
 
 
 
