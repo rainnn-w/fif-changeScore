@@ -253,12 +253,15 @@ class Handlers
 			var resultJson = Fiddler.WebFormats.JSON.JsonDecode(resultJsonString);
 		
 			
-			resultJson.JSONObject[0]["score"] = Math.floor(Math.random()*(100-98+1))+98;
-			resultJson.JSONObject[0]["semantic"] = Math.floor(Math.random()*(100-98+1))+98;
-			resultJson.JSONObject[0]["accuracy"] = Math.floor(Math.random()*(100-98+1))+98;
-			resultJson.JSONObject[0]["fluency"] = Math.floor(Math.random()*(100-98+1))+98;
-			resultJson.JSONObject[0]["complete"] = 100;
-			resultJson.JSONObject[0]["learn_time"] = Math.floor(Math.random()*(150-85+1))+85;
+			
+			for (var item in resultJson.JSONObject) {
+				resultJson.JSONObject[item]["score"] = Math.floor(Math.random()*(100-98+1))+98;
+				resultJson.JSONObject[item]["semantic"] = Math.floor(Math.random()*(100-98+1))+98;
+				resultJson.JSONObject[item]["accuracy"] = Math.floor(Math.random()*(100-98+1))+98;
+				resultJson.JSONObject[item]["fluency"] = Math.floor(Math.random()*(100-98+1))+98;
+				resultJson.JSONObject[item]["complete"] = 100;
+				resultJson.JSONObject[item]["learn_time"] = Math.floor(Math.random()*(150-85+1))+85;
+			}
 			FiddlerApplication.Log.LogString("=========" + resultJson.JSONObject[0]["score"]);
 
 			
@@ -534,6 +537,7 @@ class Handlers
 		}
 	}
 }
+
 
 
 
