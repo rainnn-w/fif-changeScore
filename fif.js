@@ -253,17 +253,21 @@ class Handlers
 			var resultJson = Fiddler.WebFormats.JSON.JsonDecode(resultJsonString);
 		
 			
-			
-			for (var item in resultJson.JSONObject) {
-				resultJson.JSONObject[item]["score"] = Math.floor(Math.random()*(100-98+1))+98;
-				resultJson.JSONObject[item]["semantic"] = Math.floor(Math.random()*(100-98+1))+98;
-				resultJson.JSONObject[item]["accuracy"] = Math.floor(Math.random()*(100-98+1))+98;
-				resultJson.JSONObject[item]["fluency"] = Math.floor(Math.random()*(100-98+1))+98;
-				resultJson.JSONObject[item]["complete"] = 100;
-				resultJson.JSONObject[item]["learn_time"] = Math.floor(Math.random()*(150-85+1))+85;
+			for (var i = 0; i < resultJson.JSONObject.Count; i++) {
+				resultJson.JSONObject[i]["score"] = Math.floor(Math.random() * (100 - 98 + 1)) + 98;
+				resultJson.JSONObject[i]["semantic"] = Math.floor(Math.random() * (100 - 98 + 1)) + 98;
+				resultJson.JSONObject[i]["accuracy"] = Math.floor(Math.random() * (100 - 98 + 1)) + 98;
+				resultJson.JSONObject[i]["fluency"] = Math.floor(Math.random() * (100 - 98 + 1)) + 98;
+				resultJson.JSONObject[i]["complete"] = 100;
+				resultJson.JSONObject[i]["learn_time"] = Math.floor(Math.random() * (150 - 85 + 1)) + 85;
 			}
-			FiddlerApplication.Log.LogString("=========" + resultJson.JSONObject[0]["score"]);
 
+			//resultJson.JSONObject[1]["score"] = Math.floor(Math.random()*(100-98+1))+98;
+			//resultJson.JSONObject[1]["semantic"] = Math.floor(Math.random()*(100-98+1))+98;
+			//resultJson.JSONObject[1]["accuracy"] = Math.floor(Math.random()*(100-98+1))+98;
+			//resultJson.JSONObject[1]["fluency"] = Math.floor(Math.random()*(100-98+1))+98;
+			//resultJson.JSONObject[1]["complete"] = 100;
+			//resultJson.JSONObject[1]["learn_time"] = Math.floor(Math.random()*(150-85+1))+85;
 			
 			// 将JSON对象转换为字符串
 			var resultJsonStringFinal = Fiddler.WebFormats.JSON.JsonEncode(resultJson.JSONObject);
@@ -537,6 +541,8 @@ class Handlers
 		}
 	}
 }
+
+
 
 
 
