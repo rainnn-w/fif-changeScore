@@ -10,7 +10,7 @@
 
 Rules-> Customize Rules 
 
-将本仓库中的fif.js复制替换上去即可
+将本仓库中的fif.js复制替换上去即可（或者只修改OnbeforeRequest方法）
 
 
 
