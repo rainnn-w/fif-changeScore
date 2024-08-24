@@ -6,7 +6,7 @@
 
 ## 使用指南
 
-打开Fiddler  抓包配置请自行搜查配置
+打开Fiddler  （抓包配置请自行搜索并配置）
 
 Rules-> Customize Rules 
 
